@@ -3,7 +3,7 @@ package com.example.carsharing.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Car")
+@Table(name = "myuser")
 public class User {
     @Id
     @Column(name = "id")
@@ -14,7 +14,7 @@ public class User {
     private String name;
 
     @Column(name = "age")
-    private String age;
+    private int age;
 
     @Column(name = "password")
     private String password;
@@ -37,11 +37,11 @@ public class User {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -51,5 +51,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
